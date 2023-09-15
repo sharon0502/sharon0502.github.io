@@ -1,0 +1,34 @@
+h1{
+    color:lightblue
+}
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+#banner {
+    width:800px;
+    height:150px;
+    background-color:plum;
+    clear:both;
+}
+#nav { 
+    width:125px;
+    background-color: palegoldenrod;
+    float:left;
+}
+#content {
+    width:550px;
+    float:left;
+}
+#supporting {
+    width:125px;
+    height:200px;
+    background-color:powderblue;
+    float:right;
+}
+#footer {
+    width:800px;
+    height:50px;
+    background-color:pink;
+    clear:both;
+}
