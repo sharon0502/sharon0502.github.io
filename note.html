@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>your website title</title>
+    <link rel="stylesheet" type="text/css" href="css/main note.css">
+    <!-- link 連結到 css -->
+</head>
+
+<body>
+    <p class="nice">Hello World</p>
+    
+<!-- div (divison) 版面區塊 
+由上而下, 由左而右, 依序為: banner, nav, content, info, footer    -->
+<div id="wrapper">
+<!-- wrapper  -->
+    <div id="banner" style="background-color: beige; min-height: 100px;">
+        <h1>Banner</h1>
+         <!-- h1為heading 1, 會變粗體字 -->
+         <!-- min-height為區塊最小高度, "px" or "vh", "vh": divison高度=可視區間高度(根據螢幕變動改變) -->
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li><a href="#scene01">Scene 01</a></li>
+            <li><a href="#scene02">Scene 02</a></li>
+            <li><a href="#scene03">Scene 03</a></li>
+            <li><a href="#scene04">Scene 04</a></li>
+        </ul>
+        <!-- ul: 網站列表, 加入超鏈結後, 點選後可以跳到該區段 -->
+        <!-- a href: 超連結, 要跳到id, 需用#, id不可有空白 -->
+   </div>
+
+    <div id="content">
+        <section id="scene01">
+            <h2>Scene 01</h2>
+        </section>
+        <section id="scene02">
+            <h2>Scene 02</h2>
+        </section>
+        <section id="scene03">
+            <h2>Scene 03</h2>
+        </section>
+        <section id="scene04">
+            <h2>Scene 04</h2>
+        </section>
+        <!-- section: 文檔結構化, 區域節段(文章) -->
+    </div>
+
+    <div id="supporting">information</div>
+    <div id="footer"></div>
+</div>
+</body>
+
+</html>
