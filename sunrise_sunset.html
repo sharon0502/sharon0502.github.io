@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sunrise_sunset</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    }
+
+    .container-fluid {
+    position: relative;
+    width: 100%;
+    }
+
+    .vsection {
+    height: 200vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    }
+
+    .section {
+    height: 200vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    }
+
+    .video-section {
+    width:100vw;
+    height:100vh;
+    background-color: transparent;
+    }
+
+    #video1, #video2 {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw;
+    height: auto;
+    top: 0;
+    left: 0;
+    }
+
+    h1 {
+    background-color: white;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="section leading-section">
+          <h1>Leading section: 青青草原日出</h1>
+      </div>
+    <div class="vsection">
+      <div class="sticky-top">
+      <div class="video-section video1-section">
+          <video id="video1" src="https://sharon0502.github.io/assets/hw5/日出.mp4"></video>
+      </div>
+      </div>
+    </div>
+      <div class="section middle-section">
+          <h1>Middle section: 香山濕地日落</h1>
+      </div>
+    <div class="vsection">
+      <div class="sticky-top">
+      <div class="video-section video2-section">
+          <video id="video2" src="https://sharon0502.github.io/assets/hw5/日落.mp4"></video>
+      </div>
+      </div>
+    </div>
+      <div class="section ending-section">
+          <h1>Ending section:<br>取自 https://youtu.be/j4I21Fw5wSA?si=63eB38pdfaGbnGso</h1>
+      </div>
+  </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+  $(function() {
+    const videoElement1 = $('#video1').get(0);
+    const videoElement2 = $('#video2').get(0);
+    const maxScroll = $(document).height() - $(window).height();
+
+    $(window).scroll(function() {
+        const currentScrollPosition = $(document).scrollTop();
+
+        if (videoElement1.duration) {
+            videoElement1.currentTime = (currentScrollPosition / maxScroll) * videoElement1.duration;
+        } else {
+            console.warn("Video 1 duration is not available");
+        }
+
+        if (videoElement2.duration) {
+            videoElement2.currentTime = (currentScrollPosition / maxScroll) * videoElement2.duration;
+        } else {
+            console.warn("Video 2 duration is not available");
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
