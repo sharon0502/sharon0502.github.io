@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>臺灣的掌中寶【布袋戲的過去與未來】</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            /* #start {
+            background-image: url(https://sharon0502.github.io/assets/puppet/start2.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 500vh; 
+            width: 100vw;
+            background-size: 100%;
+            } */
+            .video-container {
+            position: relative;
+            height: 125vh;
+            width: calc(100vw + 120px);
+            overflow: hidden;
+            background-color: black;
+            }
+            .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            z-index: 2;
+            }
+            video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% + 120px);
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            }
+            .text-overlay {
+            position: absolute;
+            transform: translate(100% 50%);
+            left: 10%;
+            top: 10%;
+            z-index: 3;
+            }
+            #impression {
+            background-image: url(https://sharon0502.github.io/assets/puppet/pili.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 80vw;
+            background-position: 0% 0.190476%;
+            background-color: black;
+            }
+            .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            }
+            .audio-word {
+            position: center;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: 700;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1px;
+            }
+            .audio-pause {
+            background-image: url(https://sharon0502.github.io/assets/puppet/audio/play.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            }
+            .audio-play {
+            background-image: url(https://sharon0502.github.io/assets/puppet/audio/pause.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            }
+            #vertical-line {
+            position: absolute;
+            background-color: rgb(141,122,109,0.8);
+            width: 3px;
+            height: 700%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 100px;
+            }
+            .event {
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            }
+            .timeline-text {
+            background-color: #8d7a6d;
+            color: white;
+            font-family: Noto Serif TC, serif;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 12px;
+            border-radius: 10px;
+            writing-mode: vertical-rl;
+            }
+            #interview-chen-photo {
+	        background-image: url("https://sharon0502.github.io/assets/puppet/1.jpg");
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            #interview-yang-photo {
+	        background-image: url("https://sharon0502.github.io/assets/puppet/14.JPG");
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            h1 {
+            color: white;
+            position: center;
+            padding-top: 150px;
+            text-align:justify;
+            font-size: 53px;
+            line-height: 70px;
+            font-weight: 800;
+            font-family: Noto Serif TC,serif; 
+            text-shadow: 3px 3px 9px gray; 
+            letter-spacing: 5.5px;
+            }
+            h3 {
+            position: center;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 45px;
+            line-height: 60px;
+            font-weight: 800;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1.5px;
+            }
+            h4 {
+            position: relative;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 25px;
+            line-height: 36px;
+            font-weight: 700;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1px;
+            }
+            p {
+            position: relative;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 36px;
+            margin: 0;
+            font-weight: 400;
+            font-family: Noto Sans TC,sans-serif;
+            letter-spacing: 1px;
+            }
+            img {
+            max-width: 100%; 
+            height: auto;
+            display: block;
+            margin-top: 30px;
+            }
+            .highlight{
+            background-image: linear-gradient(90deg, antiquewhite 50%, rgb(141,122,109,0.4) 50%);
+	        background-position: 0%;
+	        background-size: 200%;
+            padding: 12px;
+            border-radius: 10px;
+            }
+            .highlighted {
+	        background-position: -100%;
+	        transition: all 1s;
+            color: black;
+            }
+            .img-circle {
+            position: center;
+            width: 175px;
+            height: 175px;
+            overflow: hidden; /* 裁切超出容器的部分 */
+            border-radius: 50%;
+            }
+            .img-circle img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            clip-path: circle(50% at center);
+            margin-top: 0;
+            object-fit: cover;
+            }
+            .border-box {
+            border: 2px solid rgb(141,122,109,0.8);
+            border-radius: 10px;
+            padding: 15px;
+            }
+            .emerge {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            }
+            #ending {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(100%);
+            }
+            #ending-a {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            height: 5px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(66%);
+            }
+            #ending-b {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            height: 5px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(33%);
+            }
+            #ending-c {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            height: 5px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(0%);
+            }
+            #footer {
+            color: white;
+            position: center;
+            padding-top: 35px;
+            text-align: center;
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 400;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- landing page -->
+        <!-- <div id="start">
+            <h1 id="text">臺灣掌中寶<br>布袋戲的過去與未來</h1>
+        </div> -->
+        <div class="video-container">
+            <div class="video-overlay"></div>
+            <video autoplay muted loop playsinline>
+                <source src="https://sharon0502.github.io/assets/puppet/video/start-video-1.mp4" type="video/mp4">
+            </video>
+            <div class="text-overlay">
+                <h1 id="text">臺灣的掌中寶</h1>
+                <h3 id="text2" style="color: white; opacity: 0.8; font-size: 30px; text-align: justify;">縱觀布袋戲的過去與未來</h3>
+            </div>
+        </div>
+
+        <!-- 承接的div -->
+        <div style="height: 100vh; width: 100vw; background-color: white; opacity: 0.8;"></div>
+
+        <!-- 對布袋戲的印象＆重要性及意義-->
+        <div id="impression" class="sticky-top" style="height:100vh;width:100vw; z-index: -1"></div>
+        <!-- 印象section 1 -->
+        <div class="loc" data-sx="0" data-sy="0" data-ex="0" data-ey="80" style="width:100vw;height:50vh;">
+        </div>
+        <!-- 由來section 2 -->
+        <div class="loc" data-sx="0" data-sy="80" data-ex="120" data-ey="80" style="width:100vw;height:200vh; background: rgba(0,0,0,0.5);">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6" style="padding-right: 15%;">
+                    <h3 style="padding-top: 80%; color: white;">布袋戲的由來</h3>
+                    <p style="color:white;"><br></br>
+                        法律明確性要求，非謂法律文義應具體詳盡而無解釋之空間或必要。立法者制定法律時，自得衡酌法律所規範生活事實之複雜性及適用於個案之妥當性，選擇適當之法律概念與用語，包括適當運用不確定法律概念而為相應之規定。如法律規定之意義，自立法目的與法體系整體關聯性觀點非難以理解，且個案事實是否屬於法律所欲規範之對象，為一般受規範者所得預見，並可經由法院審查認定及判斷者，即無違反法律明確性原則（本院釋字第432號、第521號、第594號、第602號、第690號、第794號及第799號解釋參照）。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 意義section 3 -->
+        <div class="loc" data-sx="120" data-sy="80" data-ex="120" data-ey="0" style="width:100vw;height:200vh; background: rgba(0,0,0,0.5);">
+            <div class="row">
+                <div class="col-5" style="padding-left: 10%;">
+                    <h3 style="padding-top: 80%; color: white;">布袋戲之於臺灣藝術文化的意義</h3>
+                    <p style="color:white;"><br></br>
+                        法律明確性要求，非謂法律文義應具體詳盡而無解釋之空間或必要。立法者制定法律時，自得衡酌法律所規範生活事實之複雜性及適用於個案之妥當性，選擇適當之法律概念與用語，包括適當運用不確定法律概念而為相應之規定。如法律規定之意義，自立法目的與法體系整體關聯性觀點非難以理解，且個案事實是否屬於法律所欲規範之對象，為一般受規範者所得預見，並可經由法院審查認定及判斷者，即無違反法律明確性原則（本院釋字第432號、第521號、第594號、第602號、第690號、第794號及第799號解釋參照）。
+                    </p>
+                </div>
+                <div class="col-7"></div>
+            </div>
+        </div>
+        <!-- section 4 -->
+        <div class="loc" data-sx="120" data-sy="0" data-ex="0" data-ey="0" style="width:100vw;height:200vh;">
+        </div>
+
+        <!-- 背景音樂一 -->
+        <div style="background-color: rgb(196, 151, 120,0.6); height: 40vh; width: 100%;">
+            <div style="position: relative; width: 65vw; left: 50%; top:50%; transform:translateY(-50%) translateX(-50%);">
+                <p class="audio-word">專題音樂：布袋戲傳統樂器演奏〈風入松－三絃〉<br>點選下方按鈕播放、暫停音樂</p>
+                <audio id="audio-timeline" style=" height: 50px; position: relative; left: 50%; transform: translateX(-50%);" src="https://sharon0502.github.io/assets/puppet/audio/trichord.mp3" loop="loop" controlslist="nodownload"></audio>
+                <div id="audioButton-trichord" class="audio-pause" style="width: 120px; height: 120px; position: relative; left: 47.5%; transform: translateX(-50%);"></div>
+            </div>
+        </div>
+
+        <!-- 時間軸 -->
+        <div class="container-fluid" style="background-color: rgb(141,122,109,0.8); height: 800vh; padding: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
+            <div style="background-color: antiquewhite; height: calc(100% - 80px); width: calc(100% - 80px); padding: 20px; margin: 40px; box-sizing: border-box;">
+                <div id="vertical-line"></div>
+                <div class="event"><span class="timeline-text">清治時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            聲請人王光祿（下稱聲請人一）因違反槍砲彈藥刀械管制條例（下稱槍砲條例）等罪案件，認臺灣高等法院花蓮分院103年度原上訴字第17號刑事判決（下稱確定終局判決一），所適用之槍砲條例第20條第1項有關自製之獵槍部分規定（下稱系爭規定一）、依同條第3項規定授權訂定之槍砲彈藥刀械許可及管理辦法第2條第3款規定（下稱系爭規定二）與野生動物保育法（下稱野保法）第21條之1第1項規定（下稱系爭規定三）、第2項前段規定（下稱系爭規定四）、原住民族基於傳統文化及祭儀需要獵捕宰殺利用野生動物管理辦法（下稱原住民族利用野生動物管理辦法）第4條第3項規定（下稱系爭規定五）及同條第4項第4款規定（下稱系爭規定六）等，有關：1、原住民持有供作生活工具用之槍枝，限於「自製之獵槍」始有免除刑罰規定之適用；2、系爭規定三至六限制原住民族狩獵文化權，有違反憲法第15條生存權、第22條保障原住民族狩獵文化權、第23條比例原則、憲法增修條文第10條第11項、第12項前段肯定多元文化存在價值並促進原住民族傳統文化發展之意旨。另系爭規定二將自製獵槍定義為「原住民傳統習慣專供獵捕維生之生活工具」、「其結構、性能須逐次由槍口裝填黑色火藥於槍管內，以打擊底火或他法引爆，將填充物射出」等情，增加法律所無之限制，已逾越法律之授權，有牴觸憲法之疑義等語，聲請解釋憲法。
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">日治時期</span></div>
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            核前開聲請人一至四聲請解釋之系爭規定一、三或四，分別為上開各確定終局判決所適用。而就所聲請解釋之系爭規定二，確定終局判決一明白表示該法院不受其拘束，其並未為確定終局判決所適用，但與系爭規定一關於自製獵槍之解釋適用有重要關聯，本院自得將之納為審查客體。另各確定終局判決雖均未適用系爭規定五及六，但與系爭規定三及四之解釋適用有重要關聯，本院亦得將之納為審查客體。前開聲請，核與司法院大法官審理案件法（下稱大審法）第5條第1項第2款所定要件相符，爰予受理。
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">民國時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            聲請人臺灣桃園地方法院刑事第四庭（下稱聲請人六）為審理同院108年度原訴字第45號違反槍砲條例案件，認應適用之系爭規定一，違反憲法增修條文第10條第11項、第12項前段等規定，且有牴觸法律明確性原則及比例原則之疑義，聲請解釋。聲請意旨略以：具原住民身分之被告於107年12月間，購入具殺傷力之空氣長槍1枝，未經許可持有之，嗣經警查扣，案經檢察官提起公訴。聲請人六認其審理所應適用之系爭規定一所稱「獵槍」意義不明確，造成受規範者無法預見，與法律明確性原則有違。況原住民狩獵文化受到憲法保障，系爭規定一除經許可之「自製獵槍」外，一概禁止原住民使用，損益明顯違反比例原則，亦欠缺正當性等語，聲請解釋憲法。
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">金光布袋戲時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">影視布袋戲時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">動漫布袋戲時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人物專訪intro -->
+        <div id="interview-intro" style="background-color:rgb(196, 151, 120); height: 50vh;"></div>
+
+        <!-- 人物專訪 -->
+        <div class="container-fluid" style="height:1000vh; width: 100%; padding: 0; background-color: white;">
+            <div id="interview-chen" style="width:100%; margin-left: 12px;">
+                <div class="row">
+                    <div class="col-6" style="padding: 80px">
+                        <h4>陳錫煌傳統掌中劇團</h4>
+                        <p><br>
+                            103年6月10日修正發布之槍砲彈藥刀械許可及管理辦法第2條第3款規定對於自製獵槍之規範尚有所不足，未符合使原住民得安全從事合法狩獵活動之要求，於此範圍內，與憲法保障人民生命權、身體權及原住民從事狩獵活動之文化權利之意旨有違。有關機關應至遲自本解釋公布之日起2年內，依本解釋意旨儘速檢討修正，就上開規範不足之部分，訂定符合憲法保障原住民得安全從事合法狩獵活動之自製獵槍之定義性規範。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/3.jpg">
+                        <p><br>
+                            野生動物保育法第21條之1第1項規定：「台灣原住民族基於其傳統文化、祭儀，而有獵捕、宰殺或利用野生動物之必要者，不受第17條第1項、第18條第1項及第19條第1項各款規定之限制。」所稱「傳統文化」，應包含原住民依其所屬部落族群所傳承之飲食與生活文化，而以自行獵獲之野生動物供自己、家人或部落親友食用或作為工具器物之非營利性自用之情形，始符憲法保障原住民從事狩獵活動之文化權利之意旨。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/5.jpg">
+                        <p><br>
+                            原住民族基於傳統文化及祭儀需要獵捕宰殺利用野生動物管理辦法第4條第3項規定：「申請人應填具申請書……於獵捕活動20日前，向獵捕所在地鄉（鎮、市、區）公所申請核轉直轄市、縣（市）主管機關核准。但該獵捕活動係屬非定期性者，應於獵捕活動5日前提出申請……」有關非定期性獵捕活動所定之申請期限與程序規定部分，其中就突發性未可事先預期者，欠缺合理彈性，對原住民從事狩獵活動之文化權利所為限制已屬過度，於此範圍內，有違憲法比例原則，應自本解釋公布之日起不再適用。於相關規定修正發布前，主管機關就原住民前述非定期性獵捕活動提出之狩獵申請，應依本解釋意旨就具體個案情形而為多元彈性措施，不受獵捕活動5日前提出申請之限制。同辦法第4條第4項第4款規定：「前項申請書應載明下列事項：……四、獵捕動物之種類、數量……。」之部分，違反憲法比例原則，亦應自本解釋公布之日起不再適用。
+                        </p>
+                    </div>
+                    <div class="col-6" class="sticky-top" id="interview-chen-photo"></div>
+                </div>
+            </div>
+            <div style="background-color: white; height: 40px;"></div>
+            <div id="interview-yang" style="width:100%; margin-right: 12px;">
+                <div class="row">
+                    <div class="col-6" class="sticky-top" id="interview-yang-photo"></div>
+                    <div class="col-6" style="padding: 80px;">
+                        <h4>操偶師</h4>
+                        <p><br>
+                            103年6月10日修正發布之槍砲彈藥刀械許可及管理辦法第2條第3款規定對於自製獵槍之規範尚有所不足，未符合使原住民得安全從事合法狩獵活動之要求，於此範圍內，與憲法保障人民生命權、身體權及原住民從事狩獵活動之文化權利之意旨有違。有關機關應至遲自本解釋公布之日起2年內，依本解釋意旨儘速檢討修正，就上開規範不足之部分，訂定符合憲法保障原住民得安全從事合法狩獵活動之自製獵槍之定義性規範。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/12.JPG">
+                        <h4><br>光雕布袋戲</h4>
+                        <p><br>
+                            原住民族基於傳統文化及祭儀需要獵捕宰殺利用野生動物管理辦法第4條第3項規定：「申請人應填具申請書……於獵捕活動20日前，向獵捕所在地鄉（鎮、市、區）公所申請核轉直轄市、縣（市）主管機關核准。但該獵捕活動係屬非定期性者，應於獵捕活動5日前提出申請……」有關非定期性獵捕活動所定之申請期限與程序規定部分，其中就突發性未可事先預期者，欠缺合理彈性，對原住民從事狩獵活動之文化權利所為限制已屬過度，於此範圍內，有違憲法比例原則，應自本解釋公布之日起不再適用。於相關規定修正發布前，主管機關就原住民前述非定期性獵捕活動提出之狩獵申請，應依本解釋意旨就具體個案情形而為多元彈性措施，不受獵捕活動5日前提出申請之限制。同辦法第4條第4項第4款規定：「前項申請書應載明下列事項：……四、獵捕動物之種類、數量……。」之部分，違反憲法比例原則，亦應自本解釋公布之日起不再適用。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: white; height: 40px;"></div>
+
+        </div>
+
+        <!-- 背景音樂二 -->
+        <div style="background-color: rgb(196, 151, 120,0.6); height: 40vh; width: 100%;">
+            <div style="position: relative; width: 65vw; left: 50%; top:50%; transform:translateY(-50%) translateX(-50%);">
+                <p class="audio-word">專題音樂：布袋戲傳統樂器演奏〈風入松－笛子〉<br>點選下方按鈕播放、暫停音樂</p>
+                <audio id="audio-ending" style=" height: 50px; position: relative; left: 50%; transform: translateX(-50%);" src="https://sharon0502.github.io/assets/puppet/audio/flute.mp3" loop="loop" controlslist="nodownload"></audio>
+                <div id="audioButton-flute" class="audio-pause" style="width: 120px; height: 120px; position: relative; left: 47.5%; transform: translateX(-50%);"></div>
+            </div>
+        </div>
+
+        <!-- 討論 -->
+        <div class="container-fluid" style="height: 1000vh; width: 100vw; padding: 0;">
+            <div style="background: linear-gradient(rgb(141,122,109,0.8), antiquewhite);height: 120vh; width: 100vw;">
+                <h3 style="padding-top: 15%;">傳統布袋戲發展各方論述</h3>
+                <p style="padding-left: 20%; padding-right: 20%;"><br></br>
+                    準此，原住民從事狩獵活動之文化權利固受憲法所保障，惟為兼顧野生動物之保護，非不得以法律或法律明確授權之命令予以適當之限制。鑑於原住民從事狩獵活動之文化權利與野生動物之保護，皆屬憲法所保障之重要價值，是相關限制是否合憲，本院爰適用中度標準予以審查，如其目的係為追求重要公共利益，且所採限制手段與其目的之達成間具實質關聯，而並未過當，即與憲法第23條比例原則無違。
+                </p>
+            </div>
+            <div style="background-color: antiquewhite; height: 760vh; width: 100vw;">
+                <!-- 問題一: 對於國語配音、多人口白、光雕布袋戲的的態度？ -->
+                <div style="height: 150vh; width: 100vw;">
+                    <h4 style="color: rgb(141,122,109,0.8); padding-left: 20%; padding-right: 20%;"><span class="highlight">對於國語配音、多人口白、光雕布袋戲的的態度？</span></h4>
+                    <!-- 問題一回答一 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/1.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">陳錫煌傳統掌中劇團</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    槍砲條例係為維護社會秩序、保障人民生命財產安全所制定（槍砲條例第1條規定參照），其中關於槍砲彈藥部分，凡可發射金屬或子彈具有殺傷力之各式槍砲及其所使用之彈藥等，均依該條例全面納入管制，非經中央主管機關許可，不得製造、販賣、運輸、轉讓、出租、出借、持有、寄藏或陳列。未經許可而為之者，依所涉槍砲、彈藥種類及行為態樣，各定有刑罰之規定（槍砲條例第5條、第5條之1、第7條至第13條規定參照）。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題一回答二 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="border-box">
+                                    槍砲條例係為維護社會秩序、保障人民生命財產安全所制定（槍砲條例第1條規定參照），其中關於槍砲彈藥部分，凡可發射金屬或子彈具有殺傷力之各式槍砲及其所使用之彈藥等，均依該條例全面納入管制，非經中央主管機關許可，不得製造、販賣、運輸、轉讓、出租、出借、持有、寄藏或陳列。未經許可而為之者，依所涉槍砲、彈藥種類及行為態樣，各定有刑罰之規定（槍砲條例第5條、第5條之1、第7條至第13條規定參照）。
+                                </p>
+                            </div>
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/22.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">炎卿戲偶雕刻公司</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題一回答三 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/13.JPG">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">操偶師</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    槍砲條例係為維護社會秩序、保障人民生命財產安全所制定（槍砲條例第1條規定參照），其中關於槍砲彈藥部分，凡可發射金屬或子彈具有殺傷力之各式槍砲及其所使用之彈藥等，均依該條例全面納入管制，非經中央主管機關許可，不得製造、販賣、運輸、轉讓、出租、出借、持有、寄藏或陳列。未經許可而為之者，依所涉槍砲、彈藥種類及行為態樣，各定有刑罰之規定（槍砲條例第5條、第5條之1、第7條至第13條規定參照）。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: antiquewhite; height: 45vh; width: 100vw;"></div>
+                <!-- 問題二: 現今產業的轉型有哪些？業界人士態度為何？ -->
+                <div style="height: 150vh; width: 100vw;">
+                    <h4 style="color: rgb(141,122,109,0.8); padding-left: 20%; padding-right: 20%;"><span class="highlight">現今產業的轉型有哪些？業界人士態度為何？</span></h4>
+                    <!-- 問題二回答一 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/1.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">陳錫煌傳統掌中劇團</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    槍砲條例係為維護社會秩序、保障人民生命財產安全所制定（槍砲條例第1條規定參照），其中關於槍砲彈藥部分，凡可發射金屬或子彈具有殺傷力之各式槍砲及其所使用之彈藥等，均依該條例全面納入管制，非經中央主管機關許可，不得製造、販賣、運輸、轉讓、出租、出借、持有、寄藏或陳列。未經許可而為之者，依所涉槍砲、彈藥種類及行為態樣，各定有刑罰之規定（槍砲條例第5條、第5條之1、第7條至第13條規定參照）。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: antiquewhite; height: 45vh; width: 100vw;"></div>
+                <!-- 問題三: 各自的下一步是什麼？未來方向有哪些？ -->
+                <div style="height: 150vh; width: 100vw;">
+                    <h4 style="color: rgb(141,122,109,0.8); padding-left: 20%; padding-right: 20%;"><span class="highlight">各自的下一步是什麼？未來方向有哪些？</span></h4>
+                    <!-- 問題三回答一 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/1.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">陳錫煌傳統掌中劇團</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    槍砲條例係為維護社會秩序、保障人民生命財產安全所制定（槍砲條例第1條規定參照），其中關於槍砲彈藥部分，凡可發射金屬或子彈具有殺傷力之各式槍砲及其所使用之彈藥等，均依該條例全面納入管制，非經中央主管機關許可，不得製造、販賣、運輸、轉讓、出租、出借、持有、寄藏或陳列。未經許可而為之者，依所涉槍砲、彈藥種類及行為態樣，各定有刑罰之規定（槍砲條例第5條、第5條之1、第7條至第13條規定參照）。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: linear-gradient(antiquewhite, rgb(141,122,109,0.8));height: 120vh; width: 100vw;"></div>
+        </div>
+
+        <!-- 結論 -->
+        <div id="ending" class="container-fluid" style="height: 200vh; width: 100vw;">
+            <div style="position: relative; margin: 0 auto; text-align: center; padding-left: 20%; padding-right: 20%; padding-top: 30%;">
+                <h3 style="color: rgb(141,122,109); background-color:antiquewhite; padding: 12px; border-radius: 10px; width: 50vw;">一句回應問題意識的結論</h3>
+                <p style="color: antiquewhite;"><br>維護人性尊嚴與尊重人格自由發展，為自由民主憲政秩序之核心價值（本院釋字第603號解釋參照）。憲法增修條文第10條第11項規定：「國家肯定多元文化，並積極維護發展原住民族語言及文化。」第12項前段規定：「國家應依民族意願，保障原住民族之地位……並對其教育文化……予以保障扶助並促其發展……。」是原住民族之文化為憲法所明文肯認，國家有保障、扶助並促進其發展之義務（本院釋字第719號解釋參照）。身為原住民族成員之個別原住民，其認同並遵循傳統文化生活之權利，雖未為憲法所明文列舉，惟隨著憲法對多元文化價值之肯定與文化多元性社會之發展，並參諸當代民主國家尊重少數民族之發展趨勢（註1），為維護原住民之人性尊嚴、文化認同、個人文化主體性及人格自由發展之完整，進而維繫、實踐與傳承其所屬原住民族特有之傳統文化，以確保原住民族文化之永續發展，依憲法第22條、憲法增修條文第10條第11項及第12項前段規定，原住民應享有選擇依其傳統文化而生活之權利。此一文化權利應受國家之尊重與保障，而為個別原住民受憲法保障基本權之一環。
+                </p>
+            </div>
+        </div>
+        <div id="ending-a" class="container-fluid" style="padding-top: 80px;height : 300px"></div>
+        <div id="ending-b" class="container-fluid" style="padding-top: 80px;height : 300px"></div>
+        <div id="ending-c" class="container-fluid" style="padding-top: 80px;height : 1000px"></div>
+
+        <!-- Footer -->
+        <div style="height: 50vh; width: 100vw; background-color: rgb(145,73,64,0.9);">
+            <p id="footer">
+                採訪及製作團隊｜鄭喬羽、洪迎喬、蔡欣容<br>
+                文字｜鄭喬羽、洪迎喬<br>
+                網頁｜蔡欣容<br>
+                特別感謝｜<br>
+                陳錫煌傳統掌中劇團 陳錫煌、陳冠霖<br>
+                炎卿戲偶雕刻公司 徐俊文<br>
+                臺北偶戲館 蔡易衛<br>
+                新竹五洲真吉祥掌中劇團 楊志豪<br>
+                臺大布袋戲研習社學長 
+            </p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script>
+        // 逐字
+        // 逐字显示h1文字
+        const textElement = document.getElementById('text');
+        const text = textElement.innerText;
+        textElement.innerText = ''; // 清空原本的文字
+        let index = 0;
+        function showText() {
+            textElement.innerText += text[index];
+            index++;
+            if (index < text.length) {
+                setTimeout(showText, 180);
+            }
+        }
+        // 逐字显示h3文字
+        const textElement2 = document.getElementById('text2');
+        const text2 = textElement2.innerText;
+        textElement2.innerText = ''; // 清空原本的文字
+        let index2 = 0;
+        // 等待h1文字逐字显示完毕后开始h3文字的逐字显示
+        setTimeout(() => {
+            function showText2() {
+                textElement2.innerText += text2[index2];
+                index2++;
+                if (index2 < text2.length) {
+                    setTimeout(showText2, 180);
+                }
+            }
+            showText2();
+        }, text.length * 200); // 延迟h3文字显示直到h1文字显示完毕
+        // 當頁面載入後觸發h1文字的逐字顯示
+        window.onload = function () {
+            showText();
+        };
+
+
+
+        // 開頭影片淡入 
+        window.addEventListener('DOMContentLoaded', function () {
+            var videoOverlay = document.querySelector('.video-overlay');
+
+            setTimeout(function() {
+                videoOverlay.style.opacity = '0';
+            }, 4000); // Wait for 4 seconds
+
+            var video = document.querySelector('video');
+            video.onloadeddata = function() {
+                setTimeout(function() {
+                    videoOverlay.style.opacity = '0';
+                }, 4000); // Wait for 4 seconds
+            };
+        });
+
+
+        // 對布袋戲的印象: scrolled image
+        $(window).scroll(function () {
+            var scrolled = $(document).scrollTop();
+            $(".loc").each(function () {
+                var thispos = $(this).offset().top;
+                var thish = $(this).height();
+                if (scrolled >= thispos && scrolled < thispos + thish) {
+                    var perc = (scrolled - thispos) / thish;
+                    var newx = perc * ($(this).data("ex") - $(this).data("sx")) + $(this).data("sx");
+                    var newy = perc * ($(this).data("ey") - $(this).data("sy")) + $(this).data("sy");
+                    $("#impression").css("background-position", newx + "% " + newy + "%");
+                }
+            });
+        });
+
+
+        // 對布袋戲的印象: 大家留言
+        // 選取所有圖片元素
+        // const images = document.querySelectorAll('.image-container img');
+        // // 使圖片逐一浮現
+        // let delay = 0;
+        // // 檢查元素是否進入視窗
+        // const observer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             entry.target.style.transition = "opacity 1s ease"; // 設定動畫效果
+        //             entry.target.style.opacity = "1"; // 顯示圖片
+        //             entry.target.style.transitionDelay = `${delay}s`; // 設定每張圖片的延遲
+        //             delay += 0.85; // 調整每張圖片的延遲時間
+        //         } else {
+        //             entry.target.style.transition = "opacity 1s ease"; // 設定動畫效果
+        //             entry.target.style.opacity = "0"; // 隱藏圖片
+        //             entry.target.style.transitionDelay = "0s"; // 隱藏時不使用延遲
+        //         }
+        //     });
+        // }, { threshold: 1/3 }); // 設定閾值為1/3
+        // // 對每個圖片元素設置觀察器
+        // images.forEach(img => {
+        //     observer.observe(img);
+        // });
+        // // 當圖片重新進入視窗時重置延遲
+        // const imageContainer = document.querySelector('.image-container');
+        // const observerContainer = new IntersectionObserver(entries => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             delay = 0; // 重新設置延遲
+        //         }
+        //     });
+        // }, { threshold: 0 });
+        // observerContainer.observe(imageContainer);
+
+
+
+        // 音樂一播放
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-timeline');
+            const audioButton = document.getElementById('audioButton-trichord');
+
+            audioButton.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    audioButton.classList.remove('audio-pause');
+                    audioButton.classList.add('audio-play');
+                } else {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+        // 音樂一暫停
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-timeline');
+            const audioButton = document.getElementById('audioButton-trichord');
+            const interviewIntro = document.getElementById('interview-intro');
+
+        window.addEventListener('scroll', function () {
+            const rect = interviewIntro.getBoundingClientRect();
+                if (rect.bottom <= window.innerHeight) {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+
+
+        // 時間軸動畫    
+        // 獲取所有的 timeline-text 元素
+        const textElements = document.querySelectorAll('.timeline-text');
+        // 找到第一個進入視窗的 span
+        let lastY=[0, 0, 0, 0, 0, 0, 0];
+        let firstY=300;
+        textElements.forEach((text, index) => {
+            const rect = text.getBoundingClientRect();
+            lastY[index] = rect.top-firstY;
+        })
+        lastY[6]=lastY[5]+580;
+        // 監聽滾動事件
+        window.addEventListener('scroll', () => {
+            textElements.forEach((text, index) => {
+                const rect = text.getBoundingClientRect();
+                if (window.scrollY>=lastY[index]&&window.scrollY<lastY[index+1]){
+                    text.style.transform = `translateY(${window.scrollY-lastY[index]}px)`;
+                }
+            });
+        });
+
+
+        // 音樂二播放
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-ending');
+            const audioButton = document.getElementById('audioButton-flute');
+
+            audioButton.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    audioButton.classList.remove('audio-pause');
+                    audioButton.classList.add('audio-play');
+                } else {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+        // 音樂二暫停
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-ending');
+            const audioButton = document.getElementById('audioButton-flute');
+            const interviewIntro = document.getElementById('ending-c');
+
+        window.addEventListener('scroll', function () {
+            const rect = interviewIntro.getBoundingClientRect();
+                if (rect.bottom <= window.innerHeight) {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+
+
+        // highlight
+        $(function () {
+	        var winh = $(window).height();
+	        $(window).scroll(function () {
+		        var current_pos = $(document).scrollTop();
+		        $(".highlight").each(function () {
+			        if (current_pos > $(this).offset().top - winh / 2) {
+				        $(this).addClass("highlighted");
+			        } 
+		        });
+	        });
+        });
+
+
+        // 浮現emerge
+        window.addEventListener('scroll', function () {
+            var emergeElements = document.querySelectorAll('.emerge');
+            emergeElements.forEach(function (emergeElement) {
+                var emergePosition = emergeElement.getBoundingClientRect().top;
+                var screenHeight = window.innerHeight;
+                if (emergePosition < screenHeight * 0.5) {
+                    emergeElement.style.opacity = '1';
+                }
+            });
+        });
+
+        </script>
+    </body>
+</html>
