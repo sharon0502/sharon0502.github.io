@@ -58,6 +58,17 @@
             background-position: 0% 0.190476%;
             background-color: black;
             }
+            .loc-image-container {
+            position: absolute;
+            overflow: hidden;
+            top:180%;
+            }
+            .fade-in-image {
+            opacity: 0;
+            position: absolute;
+            height:100vh;
+            transition: opacity 0.5s ease-in-out;
+            }
             .container-fluid {
             width: 100%;
             padding-right: 15px;
@@ -284,12 +295,22 @@
         </div>
 
         <!-- 承接的div -->
-        <div style="height: 100vh; width: 100vw; background-color: white; opacity: 0.8;"></div>
+        <div class="emerge" style="height: 40vh; width: 100vw; background-color: lightgray;">
+            <h3 style="font-size:25px; color:black; padding: 12px; padding:5%">
+                你／妳印象中的布袋戲，是什麼樣的？<br>你／妳對布袋戲的了解，有多少？
+            </h3>
+        </div>
 
         <!-- 對布袋戲的印象＆重要性及意義-->
-        <div id="impression" class="sticky-top" style="height:100vh;width:100vw; z-index: -1"></div>
+        <div id="impression" class="sticky-top" data-sx="0" data-sy="0" data-ex="0" data-ey="80" style="height:120vh;width:100vw; z-index: -1">
+        </div>
         <!-- 印象section 1 -->
-        <div class="loc" data-sx="0" data-sy="0" data-ex="0" data-ey="80" style="width:100vw;height:50vh;">
+        <div class="loc-image-container" style="width:100vw;height:100vh;">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression1.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression2.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression3.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression4.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression5.png" class="fade-in-image">
         </div>
         <!-- 由來section 2 -->
         <div class="loc" data-sx="0" data-sy="80" data-ex="120" data-ey="80" style="width:100vw;height:200vh; background: rgba(0,0,0,0.5);">
@@ -563,9 +584,9 @@
                 特別感謝｜<br>
                 陳錫煌傳統掌中劇團 陳錫煌、陳冠霖<br>
                 炎卿戲偶雕刻公司 徐俊文<br>
-                臺北偶戲館 蔡易衛<br>
+                臺北偶戲館 蔡易衛、劉修岑<br>
                 新竹五洲真吉祥掌中劇團 楊志豪<br>
-                臺大布袋戲研習社學長 
+                臺大布袋戲研習社學長 陳翰生 
             </p>
         </div>
 
@@ -606,7 +627,6 @@
         };
 
 
-
         // 開頭影片淡入 
         window.addEventListener('DOMContentLoaded', function () {
             var videoOverlay = document.querySelector('.video-overlay');
@@ -641,39 +661,28 @@
 
 
         // 對布袋戲的印象: 大家留言
-        // 選取所有圖片元素
-        // const images = document.querySelectorAll('.image-container img');
-        // // 使圖片逐一浮現
-        // let delay = 0;
-        // // 檢查元素是否進入視窗
-        // const observer = new IntersectionObserver(entries => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             entry.target.style.transition = "opacity 1s ease"; // 設定動畫效果
-        //             entry.target.style.opacity = "1"; // 顯示圖片
-        //             entry.target.style.transitionDelay = `${delay}s`; // 設定每張圖片的延遲
-        //             delay += 0.85; // 調整每張圖片的延遲時間
-        //         } else {
-        //             entry.target.style.transition = "opacity 1s ease"; // 設定動畫效果
-        //             entry.target.style.opacity = "0"; // 隱藏圖片
-        //             entry.target.style.transitionDelay = "0s"; // 隱藏時不使用延遲
-        //         }
-        //     });
-        // }, { threshold: 1/3 }); // 設定閾值為1/3
-        // // 對每個圖片元素設置觀察器
-        // images.forEach(img => {
-        //     observer.observe(img);
-        // });
-        // // 當圖片重新進入視窗時重置延遲
-        // const imageContainer = document.querySelector('.image-container');
-        // const observerContainer = new IntersectionObserver(entries => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             delay = 0; // 重新設置延遲
-        //         }
-        //     });
-        // }, { threshold: 0 });
-        // observerContainer.observe(imageContainer);
+        const imageContainer = document.querySelector('.loc-image-container');
+        const images = imageContainer.querySelectorAll('.fade-in-image');
+        function fadeInImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let delay = 0;
+                    images.forEach((img) => {
+                        setTimeout(() => {
+                            img.style.opacity = '1';
+                        }, delay);
+                        delay += 1000; // 设置每张图片的间隔时间（毫秒）
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+        const imageObserver = new IntersectionObserver(fadeInImages, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // 触发交叉观察器回调的阈值
+        });
+        imageObserver.observe(imageContainer);
 
 
 
