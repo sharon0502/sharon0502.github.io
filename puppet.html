@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>臺灣的掌中寶【綜觀布袋戲的過去與未來】</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            /* #start {
+            background-image: url(https://sharon0502.github.io/assets/puppet/start2.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 500vh; 
+            width: 100vw;
+            background-size: 100%;
+            } */
+            body {
+            overflow-x: hidden;
+            }
+            #navigator {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(211, 211, 211, 0.8);
+            padding: 20px;
+            z-index: 1000;
+            transition: top 0.3s ease-in-out;
+            }
+            #navigator ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            }
+            #navigator li {
+            display: inline;
+            margin-right: 40px;
+            }
+            #navigator a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: Noto Sans TC,sans-serif;
+            letter-spacing: 1px;
+            }
+            #navigator a:hover {
+            color: rgb(145, 73, 64);
+            }
+            .video-container {
+            position: relative;
+            height: 125vh;
+            width: calc(100vw + 120px);
+            overflow: hidden;
+            background-color: black;
+            }
+            .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            z-index: 2;
+            }
+            video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% + 120px);
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            }
+            .text-overlay {
+            position: absolute;
+            transform: translate(100% 50%);
+            left: 10%;
+            top: 10%;
+            z-index: 3;
+            }
+            #impression {
+            background-image: url(https://sharon0502.github.io/assets/puppet/pili.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 80vw;
+            background-position: 0% 0.190476%;
+            background-color: black;
+            }
+            .loc-image-container {
+            position: absolute;
+            overflow: hidden;
+            top:190%;
+            }
+            .fade-in-image {
+            opacity: 0;
+            position: absolute;
+            height:100vh;
+            transition: opacity 0.5s ease-in-out;
+            }
+            .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            }
+            .audio-word {
+            position: center;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: 700;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1px;
+            }
+            .audio-pause {
+            background-image: url(https://sharon0502.github.io/assets/puppet/audio/play.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            }
+            .audio-play {
+            background-image: url(https://sharon0502.github.io/assets/puppet/audio/pause.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            }
+            #vertical-line {
+            position: absolute;
+            background-color: rgb(141,122,109,0.8);
+            width: 3px;
+            height: 925%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 100px;
+            }
+            .event {
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            }
+            .timeline-text {
+            background-color: #8d7a6d;
+            color: white;
+            font-family: Noto Serif TC, serif;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 12px;
+            border-radius: 10px;
+            writing-mode: vertical-rl;
+            }
+            #interview-chen-photo {
+	        background-image: url("https://sharon0502.github.io/assets/puppet/1.jpg");
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            #interview-yang-photo {
+	        background-image: url("https://sharon0502.github.io/assets/puppet/16-1.png");
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            #interview-tsai-photo {
+	        background-image: url("https://sharon0502.github.io/assets/puppet/35-2.png");
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            #interview-boss-photo {
+	        background-image: url("https://sharon0502.github.io/assets/puppet/25-7.png");
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            h1 {
+            color: white;
+            position: center;
+            padding-top: 150px;
+            text-align:justify;
+            font-size: 60px;
+            line-height: 70px;
+            font-weight: 800;
+            font-family: Noto Serif TC,serif; 
+            text-shadow: 3px 3px 9px gray; 
+            letter-spacing: 5.5px;
+            }
+            h3 {
+            position: center;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 40px;
+            line-height: 60px;
+            font-weight: 800;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1.5px;
+            }
+            h4 {
+            position: relative;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 25px;
+            line-height: 36px;
+            font-weight: 700;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1px;
+            }
+            p {
+            position: relative;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 36px;
+            margin: 0;
+            font-weight: 400;
+            font-family: Noto Sans TC,sans-serif;
+            letter-spacing: 1px;
+            }
+            img {
+            max-width: 100%; 
+            height: auto;
+            display: block;
+            margin-top: 30px;
+            }
+            .highlight{
+            background-image: linear-gradient(90deg, antiquewhite 50%, rgb(141,122,109,0.4) 50%);
+	        background-position: 0%;
+	        background-size: 200%;
+            padding: 12px;
+            border-radius: 10px;
+            }
+            .highlighted {
+	        background-position: -100%;
+	        transition: all 1s;
+            color: black;
+            }
+            .img-circle {
+            position: center;
+            width: 175px;
+            height: 175px;
+            overflow: hidden; /* 裁切超出容器的部分 */
+            border-radius: 50%;
+            }
+            .img-circle img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            clip-path: circle(50% at center);
+            margin-top: 0;
+            object-fit: cover;
+            }
+            .border-box {
+            border: 2px solid rgb(141,122,109,0.8);
+            border-radius: 10px;
+            padding: 15px;
+            }
+            .emerge {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            }
+            #ending {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            background-attachment: fixed;
+            min-height: 200vh;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(100%);
+            }
+            #ending-a {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            height: 5px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(66%);
+            }
+            #ending-b {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            height: 5px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(33%);
+            }
+            #ending-c {
+            background-image: url(https://sharon0502.github.io/assets/puppet/ending1.jpeg);
+            height: 5px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(0%);
+            }
+            #footer {
+            color: white;
+            position: center;
+            padding-top: 35px;
+            text-align: center;
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 400;
+            font-family: Noto Serif TC,serif;  
+            letter-spacing: 1px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- landing page -->
+        <!-- <div id="start">
+            <h1 id="text">臺灣掌中寶<br>布袋戲的過去與未來</h1>
+        </div> -->
+        <div class="video-container">
+            <div class="video-overlay"></div>
+            <video autoplay muted loop playsinline>
+                <source src="https://sharon0502.github.io/assets/puppet/video/start-video-1.mp4" type="video/mp4">
+            </video>
+            <div class="text-overlay">
+                <h1 id="text">臺灣的掌中寶</h1>
+                <h3 id="text2" style="color: white; opacity: 0.8; font-size: 33.5px; text-align: justify;">綜觀布袋戲的過去與未來</h3>
+            </div>
+        </div>
+
+        <!-- Navigator -->
+        <nav id="navigator">
+            <ul>
+                <li><a href="#impression-intro">布袋戲的由來及意義</a></li>
+                <li><a href="#audio1">布袋戲在臺灣歷史中的軌跡</a></li>
+                <li><a href="#interview-intro">人物專訪</a></li>
+                <li><a href="#audio2">多元觀點交織</a></li>
+                <li><a href="#ending">傳承與創新的薪傳之路</a></li>
+            </ul>
+        </nav>
+
+        <!-- 承接的div -->
+        <div id="impression-intro" class="emerge" style="height: 40vh; width: 100vw; background-color: lightgray;">
+            <h3 style="font-size:25px; color:black; padding: 12px; padding:5%">
+                你／妳印象中的布袋戲，是什麼樣的？<br>你／妳對布袋戲的了解，有多少？
+            </h3>
+        </div>
+
+        <!-- 對布袋戲的印象＆重要性及意義-->
+        <div id="impression" class="sticky-top" data-sx="0" data-sy="0" data-ex="0" data-ey="80" style="height:160vh;width:100vw; z-index: -1">
+        </div>
+        <!-- 印象section 1 -->
+        <div class="loc-image-container" style="width:100vw;height:160vh;">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression2-2.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression1-2.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression3-2.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression4-2.png" class="fade-in-image">
+            <img src="https://sharon0502.github.io/assets/puppet/impression/impression5-2.png" class="fade-in-image">
+        </div>
+        <!-- 布袋戲也許比你認識的多更多section 2 -->
+        <div class="loc" data-sx="0" data-sy="80" data-ex="120" data-ey="80" style="width:100vw;height:200vh; background: rgba(0,0,0,0.5);">
+            <!-- <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6" style="padding-right: 15%;">
+                    <h3 style="padding-top: 120%; color: white;">布袋戲也許比你／妳認識的多更多......</h3>
+                </div>
+            </div> -->
+            <h3 style="padding-top: 50%; color: white; position: center; text-shadow: 5px 5px 8px gray;">布袋戲也許比你／妳認識的多更多......</h3>
+        </div>
+        <!-- 由來section 3 -->
+        <div class="loc" data-sx="120" data-sy="80" data-ex="120" data-ey="0" style="width:100vw;height:200vh; background: rgba(0,0,0,0.5);">
+            <div class="row">
+                <div class="col-6" style="padding-left: 10%;">
+                    <h3 style="padding-top: 30%; color: white;">布袋戲的由來</h3>
+                    <p style="color:white;"><br></br>
+                        布袋戲因戲偶身形如同布袋、以手掌操弄，因此又名為掌中戲，由傀儡戲演變而來。早在中國的唐朝，已發現杖頭偶戲、懸絲傀儡戲，但當時的表演較為簡單。直到宋代才發展出結合歌舞音樂與表演故事的型態，中國古籍《武林舊事》、《東京夢華錄》中記載的宋朝宮廷宴會禮單上就有掌中木偶戲。
+                        <br></br>而根據民間傳說，布袋戲是十七世紀明朝期間，中國泉州的讀書人梁炳麟所創。由於當時他屢試不中，因此前往九鯉湖的仙公廟祈求，回去後，他夢見一位老人握著他的手寫下「功名歸掌中」，然而在下次考試卻仍然名落孫山。後來他偶然看見魁儡戲的演出，由於需要以線操控木偶較為複雜，因此他自雕木偶並且把線剪斷，改為以手掌操作木偶演出，配合他的文學素養、出口成章，結果造成轟動，人稱「掌中戲」，他也因此明瞭當初夢仙宮話語的涵義。雖然梁炳麟不一定是布袋戲的發明者，但他的故事代表著布袋戲的起源與說書有密切的關係。
+                        <br></br>臺灣的布袋戲與農業社會背景、廟會酬神性質息息相關，由於過去娛樂少，廟會的酬神慶祝便吸引許多民眾觀賞，也讓人們開始喜歡欣賞布袋戲演出。
+                    </p>
+                </div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+        <!-- 意義section 4 -->
+        <div class="loc" data-sx="120" data-sy="0" data-ex="0" data-ey="0" style="width:100vw;height:200vh; background: rgba(0,0,0,0.5);">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6" style="padding-right: 10%;">
+                    <h3 style="padding-top: 70%; color: white;">布袋戲之於<br>臺灣藝術、文化的意義</h3>
+                    <p style="color:white;"><br></br>
+                        布袋戲不僅乘載了人們的共同記憶、有豐富的文化底蘊，經歷南管、北管、日治、金光等不同表演風格的演變，見證臺灣社會不同時期的發展與政治氛圍，富含時代特色，更是臺灣重要的傳統表演藝術，一場布袋戲的表演，需要包含戲偶製作、舞臺搭建、口白表達、管弦打擊配樂、操演戲偶等等，集民間藝術於大成，已成為臺灣本土代表性的藝術文化之一。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 背景音樂一 -->
+        <div id="audio1" style="background-color: rgb(196, 151, 120, 0.9); height: 40vh; width: 100%;">
+            <div style="position: relative; width: 65vw; left: 50%; top:50%; transform:translateY(-50%) translateX(-50%);">
+                <p class="audio-word">專題音樂：布袋戲傳統樂器演奏〈風入松－三絃〉<br>點選下方按鈕播放、暫停音樂</p>
+                <audio id="audio-timeline" style=" height: 50px; position: relative; left: 50%; transform: translateX(-50%);" src="https://sharon0502.github.io/assets/puppet/audio/trichord.mp3" loop="loop" controlslist="nodownload"></audio>
+                <div id="audioButton-trichord" class="audio-pause" style="width: 120px; height: 120px; position: relative; left: 47.5%; transform: translateX(-50%);"></div>
+            </div>
+        </div>
+
+        <!-- 時間軸 -->
+        <div id="timeline-intro" style="background-color: #8d7a6d; height: 100vh; width: 100vw;">
+            <div style="padding-top: 150px; padding-left: 250px; padding-right: 250px;">
+                <h3 style="color: white;">時代的承載    布袋戲在臺灣歷史中的軌跡</h3>
+                <p style="color: white;"><br><br>
+                    布袋戲，作為臺灣傳統表演藝術的一環，在臺灣這塊土地上歷經了兩百餘年的時光洗禮，一路上承載著故事、傳承和臺灣人的情感。從最初自中國傳入的基本表演形式，至現今的多元化型態，無不反映了時代變遷、政權移轉、媒體工具改變、觀眾期待。
+                    <br><br>那麼，布袋戲是如何在歷史洪流中生根發芽？<br>又是如何慢慢發展成今日所見的多元化形態？<br>布袋戲在不同時代分別展現著哪些面貌呢？
+                </p>
+            </div>
+        </div>
+        <div id="timeline-content" class="container-fluid" style="background-color: #8d7a6d; height: 990vh; padding: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
+            <div style="background-color: antiquewhite; height: calc(100% - 80px); width: calc(100% - 80px); padding: 20px; margin: 40px; box-sizing: border-box;">
+                <div id="vertical-line"></div>
+                <div class="event"><span class="timeline-text">清治時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            臺灣最早的布袋戲發展可以追溯至清中葉左右，道光、咸豐年間，來自漳州、泉州、泉州的布袋戲名師來臺演出或授課。隨著演藝事業發展、學戲的人漸增，布袋戲因此興盛起來。
+                            <br><br>此時的布袋戲又被稱作「籠底戲」，由於劇本被壓在劇籠底部因而得名，指的是最早由名師從中國帶來的戲曲表演，有壓箱絕活的含意，依照盛行地區的不同，發展出不同的演出系統，分為南管、白字戲仔、潮境，雖然戲曲音樂與唱腔不同，但都屬於南管音樂的範疇。
+                            <br><br>布袋戲的本土化起始於「北管布袋戲」，形成於清光緒年間，由於北管音樂是當時臺灣的流行音樂，鑼鼓喧天、節奏明快，因此在武戲的部分與過去做出很大的區別，新增了跳窗、對打、擺陣、雜耍等特技，甚至會用珍禽異獸來吸引觀眾，劇情高潮迭起。另外，由於南管追求藝術，屬於格調高雅的文戲，曾受讀書人喜愛，但隨著老一輩的讀書人減少且南管技藝困難，面臨傳承挑戰，因此最後逐漸被北管布袋戲取代。
+                            <br><br>直到清朝甲午戰爭戰敗，由日本接管臺灣，日本政府限制閩南地區的布袋戲名師不得再隨意進出臺灣，使臺灣的布袋戲發展出更為濃厚的本土特色。
+                        </p>
+                    </div>
+                    <div class="col-6" style="padding-top: 80px; padding-left: 40px;">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time1/a.png">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time1/c.png">
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="max-width: 250px; height: auto; position: center;" src="https://sharon0502.github.io/assets/puppet/doll/time1/b.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">日治時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding-top: 80px; padding-right: 40px;">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time2/a.png">
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time2/c.png">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time2/d.png">
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time2/b.png">
+                        </div>
+                        <p style="color: #8d7a6d; padding-left: 80px; padding-right: 40px; padding-top: 60px;">
+                            戲偶特色：<br>皇民化運動時期的戲偶採用中日式混合服裝、搭配日式髮型、使用武士刀。
+                        </p>
+                    </div>
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            1911年，由於當時觀眾喜歡章回演藝小說的情節，因此發展出「古冊戲」，又稱古書戲、歷史戲，演出劇本以改編中國古書、章回小說為主，多以中國歷代國家大事為主題，包含《三國演義》、《列國誌》、《大明英烈傳》、《西遊記》等。古冊戲口白文雅、詩詞優美，十分講究戲偶動作的精緻性，編排則由布袋戲班主演自行創編，或請講古師、排戲仙撰寫劇情大綱。而有關清官斷案的劇目稱作公案戲，例如《包公案》、《狄公案》。
+                            <br><br>「劍俠布袋戲」在1920年出現，以江湖奇俠懲奸除惡、行俠仗義為特色，主角多為入世的佛道人士，而道教常代表正義一方，幫助清官賢良打擊邪惡勢力、聲張正義，並傳遞惡有惡報，正義終將戰勝邪惡的道理。戲中俠士大展武功也促成了「吐劍光」、「飛行術」、「煉丹術」等功夫的流行，包含《水滸傳》、《少林演藝》都屬於劍俠布袋戲。此時臺灣南部的布袋戲融合了北管、南管與潮調，北臺灣仍維持北管音樂，而李天祿藝師的亦宛然掌中劇團受京劇影響，大量運用京劇戲曲。
+                            <br><br>1937年中日戰爭爆發，臺灣受日本總督府推動的皇民化運動影響，傳統戲曲的鑼鼓、嗩吶等樂器與中國歷史故事皆被禁止。不僅只開放七個戲班演出，為了配合政策的宣傳，日本政府將民眾喜愛的布袋戲置入日本元素，將其配樂改成使用電唱機播放西樂、日本東洋音樂，劇本題材多為日本武士道的劇情，戲偶帶有日本風格，穿著日本傳統服飾、使用武士刀並搭配日式髮型，而口白可以使用臺語，但必須混合日語或以日語翻譯說明，並且在舞臺裝設立體化布景片，以文藝復興式的透視法繪製，使觀眾的視線隨著透視的指引集中至舞臺上的演出窗口，增加欣賞時的立體感。
+                            <br><br>此外，1911年後的戲臺樣貌也產生了變化，不同於過往有如小土地廟的木雕「四腳棚」，在戲班的激烈競爭下，出現精美的「六角棚」，或稱彩樓，構造類似廟宇殿堂。
+                            <br><br>經歷皇民化運動對布袋戲的改革，全臺灣的布袋戲藝師們開始思考如何讓布袋戲跳脫傳統的框架，而後的布袋戲配樂與布景也皆受此時期改動，可見日治時期對未來的布袋戲發展帶來深遠的影響。
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">民國初期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            在脫離日本統治的1945年，藝師們紛紛復出，更多新的戲班在全臺誕生。然而1947年二二八事件的爆發，為避免匪諜活動，「外臺戲」演出被禁止長達一年，布袋戲班轉入室內戲院演出，以販售門票的方式維持生計，被稱作「內臺戲」。由於劇場空間變大，傳統木雕彩樓轉為大型布景戲臺，傳統戲偶變得色彩鮮艷並且加裝機關、尺寸放大，讓後排的觀眾看得清楚，並且分離過去由頭手一人獨擔的掌藝與口白。
+                            <br><br>為吸引觀眾願意持續購票入場看戲，開始出現有如現今連續劇形式的長期演出，被稱作「麵線戲」，在戲中加入各種聲光特效與特技、舞臺機關，且由西洋音樂取代鑼鼓後場，創造演出張力。
+                            <br><br>1951年初的「反共抗俄劇」富有濃厚的政治色彩，是政府因應時局，為了穩定民心的作品，會在布袋戲主戲前的20分鐘以穿著現代西服、梳西裝頭的戲偶演出，由當時的執政黨國民黨提供政令宣傳的「反共抗俄」劇本內容，並由呂訴上、郭炎山等人編寫愛國劇目。
+                            <br><br><br>
+                        </p>
+                    </div>
+                    <div class="col-6" style="padding-top: 80px; padding-left: 40px;">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+                            <img style="max-width: 200px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time3/b.png">
+                            <img style="max-width: 200px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time3/c.png">
+                        </div>
+                        <div style="display: flex; justify-content: center;">
+                            <img style="max-width: auto; height: 350px; position: absolute; top: 52%; transform: translateY(-52%);" src="https://sharon0502.github.io/assets/puppet/doll/time3/a-2.png">
+                        </div>
+                        <p style="color: #8d7a6d; padding-left: 40px; padding-right: 80px; padding-top: 375px;">
+                            戲偶特色：<br>反共抗俄時期的戲偶穿著現代西服並梳起西裝頭，富有當代政治特色。
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">金光布袋戲時期</span></div>
+                <div class="row">
+                    <div class="col-6">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="width: auto; max-height: 350px; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time4/a.png">
+                        </div>
+                        <p style="color: #8d7a6d; padding-left: 80px; padding-right: 40px; padding-top: 60px;">
+                            戲偶特色：<br>金光戲戲偶的偶頭較過去更大，且服裝上的裝飾多元、顏色鮮艷。
+                        </p>
+                    </div>
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            1948年李天祿藝師出演的《清宮三百年》，內容有關少林寺洪熙官、方世玉等俗家弟子三建少林寺的故事，受到民眾喜愛，也開啟了金光布袋戲的先河。當時的政治背景使社會風氣壓迫，使金光戲的劇情時代背景模糊，具更離奇的世界觀，內容可以隨意編寫，以江湖派別的對峙為主軸，敘述正派與反派的武林鬥爭，此外，主角可以起死回生多次，有如有金鋼不壞之身，因此又被稱作「金剛戲」。金光戲的盛行期間約為1954年至1965年。
+                            <br><br>此時的戲偶比過去大了二至三倍，偶頭的雕刻也不再按照過去的標準，因此出現許多創意樣貌的戲偶，搭配的服裝也有許亮片、布條裝飾，十分亮麗鮮豔。另外，這個時期觀眾對布袋戲的喜愛，已從過去欣賞藝師們表演藝術，包含口白、唱腔、掌藝，轉為崇拜戲中的人物角色。
+                        </p>
+                    </div>
+                </div>
+                <div class="event"><span class="timeline-text">影視布袋戲時期</span></div>
+                <div class="row">
+                    <div class="col-6" style="padding: 80px;">
+                        <p>
+                            1960年黃俊雄拍攝電視布袋戲《西遊記》、1969年臺視聘請李天祿演出《三國演義》，開啟「電視布袋戲」的序幕，而1977年黃俊雄在臺式演出的《雲州大俠儒》更是造成全臺灣人民的喜愛與轟動，創下97%的超高收視率，到達電視布袋戲的發展高峰。然而之後的接連幾部作品，在1974年新聞局「妨害農工正常作息」、「推行國語」的禁令下被迫停演，雖然在1981年解禁，但無法再恢復到往日的流行局勢，近年來的電視布袋戲則轉至有線電視臺播放。而隨著布袋戲進入電視播放，內臺戲開始走向下坡，最終消失於劇院內，並重新回到戶外的廟會場合。
+                            <br><br>1980年，著名的「霹靂布袋戲」誕生，同樣屬於電視布袋戲並隸屬於霹靂國際多媒體，霹靂布袋戲加強了金光布袋戲的聲光爆破效果、善用電腦特效，並且加大與精緻化戲偶。
+                            <br><br>朝向影視產業的專業生產模式發展，霹靂布袋戲設有導播室、動畫室，還有道具製作、美術設計等專業分工，以精細用心的製作帶給現代觀眾不一樣的布袋戲觀賞體驗。而2000年的《聖石傳說》更是潛入水中操偶拍戲，創造作品的刺激感與真實性。此外，霹靂布袋戲積極發展IP創作，漫畫、電子遊戲、周邊商品的拓展，不僅吸引更多人認識布袋戲，數位科技的運用也創造了新的發展模式與產業生態。
+                            <br><br>
+                        </p>
+                    </div>
+                    <div class="col-6" style="padding-top: 80px; padding-left: 40px;">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="max-width: 350px; height: auto; position: center;" src="https://sharon0502.github.io/assets/puppet/doll/time5/b-2.png">
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="max-width: 250px; height: auto; position: center;" src="https://sharon0502.github.io/assets/puppet/doll/time5/c.png">
+                        </div>
+                        <!-- <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time5/b.png">
+                            <img style="max-width: 250px; height: auto; position: relative;" src="https://sharon0502.github.io/assets/puppet/doll/time5/c.png">
+                        </div> -->
+                        <p style="color: #8d7a6d; padding-left: 40px; padding-right: 80px; padding-top: 60px;">
+                            戲偶特色：<br>影視布袋戲的戲偶以金光戲為基礎改良，妝髮更為精緻，戲偶身形及臉部五官也更貼近真人比例。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人物專訪intro -->
+        <div id="interview-intro" style="background: linear-gradient(#8d7a6d, white);height: 120vh; width: 100vw;">
+            <div style="padding-top: 150px; padding-left: 250px; padding-right: 250px;">
+                <h3 style="color: black;">人物專訪</h3>
+                <p style="color: black;"><br><br>
+                    布袋戲是中華文化的體現，表演呈現上更需要融合多方努力
+                    <br>從製作戲偶、設計造型、編排劇本、操縱戲偶、唸讀口白、演奏音樂，
+                    <br>在布袋戲臺後，每一個環節都需要專業人員的精湛技藝，方能成就一齣精彩的演出。
+                    <br><br>接下來，布袋戲從業者們將分享他們在產業內扮演的角色，以及對於布袋戲發展的獨到觀點與展望。透過他們的視角，我們將更深刻、全面地探索布袋戲。
+                </p>
+            </div>
+        </div>
+
+        <!-- 人物專訪 -->
+        <div class="container-fluid" style="height:1045vh; width: 100%; padding: 0; background-color: white;">
+            <div id="interview-chen" style="width:100%; margin-left: 12px;">
+                <div class="row">
+                    <div class="col-6" style="padding: 80px">
+                        <h4>陳錫煌傳統掌中劇團</h4>
+                        <p><br>
+                            一踏進陳錫煌老藝師的宅邸，一面牆上掛滿展示的布袋戲偶，室內一隅的神明桌供奉著戲曲之神田都元帥，象徵對於布袋戲與戲團的庇佑。陳錫煌老藝師為我們倒上一壺熱茶，與其弟子陳冠霖娓娓道來布袋戲的興衰。
+                            <br><br>現年92歲的陳錫煌，出身自戲班世家，師承父親布袋戲國寶大師李天祿。自幼便學習布袋戲表演，除了演出，他也會為戲偶製作精美戲服和頭飾，一生致力於布袋戲表演。
+                            <br><br>因應酬神需求，農業時代是布袋戲最為興盛的時期，然而隨著工業日益蓬勃，人們能看戲的時間越來越少，精力也被新的娛樂活動瓜分。陳錫煌感嘆這項技藝恐怕會有面臨消逝的一天，於是在2008年召集其弟子成立「陳錫煌傳統掌中劇團」，致力於傳統掌中戲的傳承。                          
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/3.jpg">
+                        <p><br>
+                            對於傳授布袋戲技藝，陳錫煌非常慷慨，從不怕別人從他身上學走任何絕活，只要有意學習，他就樂於教導，甚至為遠道而來的學徒提供車馬費。在傳承的過程中，「推廣」也是重要的一環，劇團時常受邀至各級學校與藝術場館演出、教學，希望透過一場偶戲表演成為學子認識布袋戲的起點。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/5.jpg">
+                        <p><br>
+                            儘管陳錫煌獲得文化部頒布的「重要傳統藝術布袋戲類保存者」、「古典布袋戲偶衣飾盔帽道具製­作技術保存者」殊榮。但對他而言，布袋戲的傳承仍存在許多阻礙。比方說雖然許多單位為他留下影像紀錄，可一般民眾若要觀看、使用，需要經過繁複申請程序才能取得。對於將文化精華束之高閣的情形，他深表遺憾，只能透過劇團的演出，持續為布袋戲創造被看見的機會。
+                            <br><br>當問到陳錫煌作為一名布袋戲藝師，成就感的來源是什麼？他猶豫片刻後，沉重地說道：「我還沒善盡傳承布袋戲的使命，心中就仍然留有遺憾。」他希望自己一生的志業，不會在時間的洪流中，被侵蝕得了無痕。
+                        </p>
+                    </div>
+                    <div class="col-6" class="sticky-top" id="interview-chen-photo"></div>
+                </div>
+            </div>
+            <div style="background-color: white; height: 40px;"></div>
+            <div id="interview-yang" style="width:100%; margin-right: 12px;">
+                <div class="row">
+                    <div class="col-6" class="sticky-top" id="interview-yang-photo"></div>
+                    <div class="col-6" style="padding: 80px;">
+                        <h4>操偶師楊志豪</h4>
+                        <p><br>
+                            操偶師楊志豪自幼就到野臺戲團學習傳統偶戲，至今已擁有近三十年的演出經驗，並且經營自己的戲班——新竹五洲真吉祥掌中劇團，因此他對於目前布袋戲產業生態相當了解。以外臺戲來說，有演出才有收入，若非資歷深厚者，工作機會相對不穩定；而在攝影棚的工作環境中，隱約存在前後輩制度，提高了傳承的不確定性。
+                            <br><br>此外，布袋戲演出涉及許多專業技藝，難以掌握精隨。就操偶師的工作來說，最重要的任務是透過操控戲偶肢體，詮釋不同的角色、情感。楊志豪說，操偶師除了需要訓練手部靈活度外，手舉戲偶演完全部劇目對於體能也是一大考驗。但若說到最重要的一項任務，便是「配合」操偶師必須辨別每一隻戲偶在戲中的定位，梳理故事脈絡，融合配樂、口白，在操偶當下做出最適合的演繹，要達成「人偶合一」的境界，靠得無非是觀察後的融會貫通以及反覆揣摩。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/12.JPG">
+                        <p><br>
+                            雖然從小接觸傳統偶戲，但楊志豪在面對新時代布袋戲的轉變時，不同於部分從業者或老觀眾的排斥，他積極嘗試融入，因為他明白若布袋戲無法突破傳統框架，欣賞布袋戲的觀眾將會不斷流失。
+                            <br><br>他分享過去與新勝景掌中劇團合作的光雕布袋戲演出，因為表演地點在室內劇場，表演形式也十分新穎，無法參照過去野臺戲經驗。他起初擔心無法配合，所幸深厚的操偶功底，加上曾與導演合作過的默契，讓他迅速上手，甚至負責居中協調其他操偶師的適應問題。而這次的演出斬獲許多好評，在觀眾回饋中，他發現有許多人是第一次觀看偶戲演出，讓他又驚又喜，也看見了布袋戲創新的可發展性。不過他補充道，這類型演出的製作成本高，難以成為主流，還是需要演師們提高布袋戲的變化性，認真思考如何吸引更多的觀眾前來觀賞。                          
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: white; height: 40px;"></div>
+            <div id="interview-tsai" style="width:100%; margin-left: 12px;">
+                <div class="row">
+                    <div class="col-6" style="padding: 80px">
+                        <h4>臺北偶戲館館長蔡易衛</h4>
+                        <p><br>
+                            臺北偶戲館自2004年開館以來，透過常設展、特展、戲劇演出等各式活動引領民眾認識偶戲，並作為偶戲資產的重要典藏處，成為匯集與推廣偶戲文化的開放場館。場館內，依照時間順序擺放著各時期的特色戲偶，以及傳統戲臺和樂器，呈現布袋戲當中的所有必備元素。
+                            <br><br>目前擔任偶戲館館長的蔡易衛出身自酬神戲的傳統布袋戲家庭，本身也是一名偶戲藝術家與藝術策展人。造訪偶戲館當天，蔡易衛不吝嗇為我們獻上一齣簡易的傳統偶戲，並向我們介紹布袋戲在臺灣發展的脈絡。身為館長他親力親為，希冀在我們的參訪中，能在心中對布袋戲留下更立體的形象。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/33.jpg">
+                        <p><br>
+                            過去修讀文化資產相關學位的蔡易衛，對於文化產業擁有獨到見解，致力於傳統藝術與當代議題的結合。他談論自己看待布袋戲的觀點，他提到，很多人將布袋戲視為一種「文化」，2006年行政院新聞局舉辦「臺灣意象票選結果暨徵圖記者會」揭示最能代表臺灣的意象，在當時布袋戲奪得冠軍，顯示布袋戲在臺灣民眾心中的崇高地位。布袋戲也屢次作為文化代表，出現在國際交流場合。不過，蔡易衛點出，布袋戲披上一層文化的外衣後，真的有助於這個產業發展得更加順遂嗎？答案不言而喻，布袋戲從中收穫的，多是美名與讚揚，但對產業的實質協助非常有限，布袋戲產業很大程度上，還是靠著從業者的熱忱才能一步步走到今天。
+                        </p>
+                    </div>
+                    <div class="col-6" class="sticky-top" id="interview-tsai-photo"></div>
+                </div>
+            </div>
+            <div style="background-color: white; height: 40px;"></div>
+            <div id="interview-boss" style="width:100%; margin-right: 12px;">
+                <div class="row">
+                    <div class="col-6" class="sticky-top" id="interview-boss-photo"></div>
+                    <div class="col-6" style="padding: 80px;">
+                        <h4>炎卿戲偶雕刻公司老闆徐俊文</h4>
+                        <p><br>
+                            「製偶總共有十個步驟，包含選材、劈形、粗胚、細胚、研磨、補土、上底漆、彩繪、上亮光漆......一隻戲偶的誕生需要歷經一個半月至兩個月的時間」。徐俊文詳細而有耐心地為我們講解製作戲偶的每一個步驟，展示他對待工作的嚴謹態度，以及布袋戲偶工藝的精緻繁瑣。
+                        </p>
+                        <img src="https://sharon0502.github.io/assets/puppet/21.jpg">
+                        <p><br>
+                            位在雲林斗南的炎卿戲偶雕刻公司，係由布袋戲偶雕刻師徐炎卿先生於1974年創立，曾經歷布袋戲在臺灣最輝煌的時期，年幼的徐俊文假日閒暇時，便會在父親身旁幫忙賺取零用錢。隨著時代變遷，布袋戲產業逐漸式微，許多製偶公司歇業，製偶師傅紛紛轉行，徐炎卿先生也在這段時辭世，徐俊文夫婦在製偶產業的灰暗時期，一肩扛下父親開創的事業。
+                            <br><br>在父親事業的頭幾年，徐俊文面臨許多考驗。在技藝層面，他必須掌握最基本的眉毛、眼睛對稱，而不同角色所需要營造的神韻不同，也就有各式雕刻要領，這些細節都需要透過不斷學習才能上手。公司的經營更是棘手的問題，因為學徒人數減少、老師傅年紀大而退休，無論是市場還是人力都逐年減少。
+                            <br><br>目前臺灣仍在從事布袋戲偶製作的公司僅剩下五間，而多是五人以下的家庭式產業。製偶公司數量銳減，使得徐俊文擔心製偶產業走入歷史是必然的結局，因此他開始思考解決之道，包含尋求異業合作，並開設臺灣第一座布袋戲觀光工廠——偶的家戲偶文創園區，對外展示炎卿過去製作的精美戲偶，呈現製偶的全過程，讓民眾對於布袋戲有更全面的了解，此舉也實現了續俊文父親希望成立布袋戲博物館的未完心願。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 背景音樂二 -->
+        <div id="audio2" style="background-color: rgb(196, 151, 120, 0.9); height: 40vh; width: 100%;">
+            <div style="position: relative; width: 65vw; left: 50%; top:50%; transform:translateY(-50%) translateX(-50%);">
+                <p class="audio-word">專題音樂：布袋戲傳統樂器演奏〈風入松－笛子〉<br>點選下方按鈕播放、暫停音樂</p>
+                <audio id="audio-ending" style=" height: 50px; position: relative; left: 50%; transform: translateX(-50%);" src="https://sharon0502.github.io/assets/puppet/audio/flute.mp3" loop="loop" controlslist="nodownload"></audio>
+                <div id="audioButton-flute" class="audio-pause" style="width: 120px; height: 120px; position: relative; left: 47.5%; transform: translateX(-50%);"></div>
+            </div>
+        </div>
+
+        <!-- 討論 -->
+        <div class="container-fluid" style="height: 1000vh; width: 100vw; padding: 0;">
+            <div id="discussion-intro" style="background: linear-gradient(rgb(141,122,109,0.8), antiquewhite);height: 120vh; width: 100vw;">
+                <h3 style="padding-top: 15%;">多元觀點交織    探索布袋戲產業前路</h3>
+                <p style="padding-left: 20%; padding-right: 20%;"><br></br>
+                    不同背景的專業人士分別代表著布袋戲多樣性的一面，他們從各自的視角出發，針對布袋戲產業面臨的挑戰、目前的轉型以及未來的發展方向，提出了獨到的見解與看法，為我們呈現一幅更加立體、多元的布袋戲產業全景。
+                </p>
+            </div>
+            <div style="background-color: antiquewhite; height: 600vh; width: 100vw;">
+                <!-- 問題一: 您認為目前布袋戲／您的工作遇到最大的挑戰是什麼？ -->
+                <div style="height: 150vh; width: 100vw;">
+                    <h4 style="color: rgb(141,122,109,0.8); padding-left: 20%; padding-right: 20%;"><span class="highlight">您認為目前布袋戲／您的工作遇到最大的挑戰是什麼？</span></h4>
+                    <!-- 問題一回答一 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/1.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">陳錫煌傳統掌中劇團</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    越來越多人聽不懂臺語，是現在傳統布袋戲遇上的重大瓶頸。即便能夠聽懂臺語，但傳統布袋戲臺詞多半採用文言文，年輕世代恐怕因為對文學經典的陌生，難以深入領略其中的意境與韻味，而提高觀賞門檻。
+                                    <br>進入工業社會以後，布袋戲早已不是休閒娛樂的首選。隨著布袋戲逐漸淡出日常生活，甚至許多不曾欣賞過或不懂得欣賞布袋戲的人認為，其嗩吶、鑼鼓配樂僅僅只是噪音，進而向地方執政單位檢舉，也成為推行布袋戲的一道阻礙。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題一回答二 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="border-box">
+                                    在與其他娛樂活動的競爭中，布袋戲已漸漸成為夕陽產業，這樣的趨勢也連帶影響製偶市場的萎縮。首先，電視節目、新媒體推陳出新，造成傳統劇團的演出機會減少；影視布袋戲拍攝模式改變用偶習慣，過去一個角色就會需要製作三尊戲偶，包括用於特寫較為精美的偶、武打戲用偶、備用偶，然而現在大部分會直接使用動畫合成，大幅降低戲偶的損壞率以及對戲偶的需求；也因為流行趨勢轉變和經濟不景氣，會購買戲偶蒐藏的愛好者也越來越少。
+                                </p>
+                            </div>
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/22.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">炎卿戲偶雕刻公司</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題一回答三 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/13.JPG">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">操偶師</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    「傳承是布袋戲面臨最大的考驗」經驗鴻溝與時間成本讓布袋戲人才出現斷層。過去從事布袋戲者，並不以傳統技藝為自詡，而僅將其當作一份工作。楊志豪認為現在工作選擇越來越多，布袋戲作為一份工作，技藝需要花費諸多心力鑽研，若要靠布袋戲維生，有賴於資歷與實力的累積。然而，學徒的薪資水準低、工作機會不穩定，即便對於布袋戲有興趣者，也容易受到經濟考量，打消以此為業的念頭。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: antiquewhite; height: 45vh; width: 100vw;"></div>
+                <!-- 問題二: 現今產業的轉型有哪些？業界人士態度為何？ -->
+                <div style="height: 150vh; width: 100vw;">
+                    <h4 style="color: rgb(141,122,109,0.8); padding-left: 20%; padding-right: 20%;"><span class="highlight">現今產業的轉型有哪些？業界人士態度為何？</span></h4>
+                    <!-- 問題二回答一 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/1.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">陳錫煌傳統掌中劇團</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    對於目前布袋戲出現國語配音、影視化、動漫化等創新舉措，陳冠霖認為這是與傳統偶戲截然不同的發展路線，這並非孰好孰差的問題，兩者也可以並存。以霹靂國際多媒體的「霹靂布袋戲」來說，其操偶方式、故事情節、經營宗旨與傳統偶戲存在極大的差異。陳冠霖對此表示：「要把自己最傳統、最原始的東西保留住」不同於企業需要考量商業模式，為拓展新客群而頻頻創新。陳錫煌傳統掌中劇團希望能讓更多人接觸、學習布袋戲，讓老藝師的技藝不僅僅有文字影像的紀錄，而能以最真實的方式被延續下去。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題二回答二 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="border-box">
+                                    曾經參與過國語客語配音、光雕布袋戲演出的楊志豪，面對創新的布袋戲演出，他抱持較開放的心態，也樂見創新為布袋戲帶來更多曝光機會。例如他曾為北少流映畫工作室製作布袋戲劇集《江湖救援團》操偶，雖然該作品以國語配音，但配音員精湛的口白，搭配操偶技藝，仍為觀眾呈現精彩的內容，該作品也因此收穫了不錯的口碑。這讓他體悟到「只要口白、操偶、劇情能夠配合到位，語言與表演形式不必設限」。
+                                </p>
+                            </div>
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/13.JPG">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">操偶師</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題二回答三 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/41.png">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">臺大布袋戲研習社</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    陳翰生是臺大布袋戲研習社的資深社員，十幾年前第一次接觸布袋戲手遊，便深深沉醉於布袋戲的魅力，成為影視布袋戲的忠實戲迷。然而，他坦言近年觀看布袋戲劇集的次數屈指可數。原因在於影視布袋戲為了維持收視率，劇集數量多、更新頻率高，久而久之可拍攝的題材被過度消耗，劇情編寫也逐漸失去深度。儘管影視布袋戲的有著極大的創新空間，但也應該謹守布袋戲最純正的核心，一昧地追隨潮流，也許能吸引一批新觀眾，但也承擔著老觀眾流失的風險。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: antiquewhite; height: 45vh; width: 100vw;"></div>
+                <!-- 問題三: 各自的下一步是什麼？未來方向有哪些？ -->
+                <div style="height: 150vh; width: 100vw;">
+                    <h4 style="color: rgb(141,122,109,0.8); padding-left: 20%; padding-right: 20%;"><span class="highlight">各自的下一步是什麼？未來方向有哪些？</span></h4>
+                    <!-- 問題三回答一 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/34.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">臺北偶戲館</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    對於布袋戲未來發展，蔡易衛給出了一個與其他受訪者較不同的觀點：「傳承其實不是問題」。他看待布袋戲的角度，更傾向傳統布袋戲藝師，將其回歸工作的本質，若這份工作無法創造市場價值、無法賴以維生，自然會消逝。這看似與偶戲館館長身分背道而馳的想法，實則道出目前布袋戲的困境，該如何在傳統基礎之上做出變化與加值，讓布袋戲的命脈流傳下去？這也正是偶戲館與布袋戲從業者的使命所在。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題三回答二 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="border-box">
+                                    「以擴大市場的角度來看，創新是必然的結果」楊志豪布袋戲要在保有傳統內涵和技藝的前提下與時俱進，他認為多語配音、戲偶動漫化甚至有機會成為將布袋戲推向國際的一種管道，讓布袋戲市場不局限於臺灣。不過，他也提醒到，要在傳統與創新之間取得平衡，傳統偶戲仍是核心，創新只是一種輔助，不應該喧賓奪主。
+                                </p>
+                            </div>
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/13.JPG">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">操偶師</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題三回答三 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/1.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">陳錫煌傳統掌中劇團</p>
+                            </div>
+                            <div class="col-9">
+                                <p class="border-box">
+                                    在劇本和口白呈現上，陳錫煌傳統掌中劇團仍然忠於傳統，使用臺語來演繹充滿中華文化底蘊的故事。而為了提高觀眾接受度，他們提供國語字幕、將部分文言文口語化，不時巧妙融合一些時事、笑話於丑角的演出當中，引發觀眾共鳴。另一方面，由於劇本的更動空間有限，靈活運用燈光音響設備、提升操偶技藝去豐富表演形式，也是吸引觀眾進劇場觀看偶戲表演的積極嘗試。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 問題三回答四 -->
+                    <div class="emerge" style="padding-left: 15%; padding-top: 5%; padding-right: 15%; height: 50vh; width: 100%;">
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="border-box">
+                                    在布袋戲風氣式微的現在，製偶業務無法再單純仰賴劇團、影視支撐，必須拓展新的客戶來源。因此，讓更多人認識並喜愛布袋戲，是另尋出路的第一步。對此徐俊文擁有諸多想法，例如開放民眾參觀製偶工廠，切身感受細緻的製偶流程，增進民眾對布袋戲的了解。維持傳統業務之餘，他認為布袋戲偶可也以作為支持性產業發展，跟咖啡廳、餐廳、伴手禮店合作，推出客製化特色商品，或提供租借服務取代購買，將戲偶出租至展覽展出、學校教學演示，讓布袋戲透過不同管道接觸到更多元的人群。
+                                </p>
+                            </div>
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <div class="img-circle mb-2">
+                                    <img src="https://sharon0502.github.io/assets/puppet/22.jpg">
+                                </div>
+                                <p style="color: #8d7a6d; position: center; padding-top: 15px;">炎卿戲偶雕刻公司</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: linear-gradient(antiquewhite, rgb(141,122,109,0.8));height: 120vh; width: 100vw;"></div>
+        </div>
+
+        <!-- 結論 -->
+        <div id="ending" class="container-fluid" style="height: 200vh; width: 100vw;">
+            <div style="position: relative; margin: 0 auto; text-align: center; padding-left: 20%; padding-right: 20%; padding-top: 30%;">
+                <h3 style="color: rgb(141,122,109); background-color:antiquewhite; padding: 12px; border-radius: 10px; width: 43vw;">邁向傳承與創新的薪傳之路</h3>
+                <p style="color: antiquewhite;"><br><br>
+                    1982年公布的《文化資產保存法》使政府單位與民間學者更加重視傳統藝術，並將其列入文化資產的範疇之下，更多對於布袋戲的表演紀錄、資料維護、研究田調應運而生，同時政府也頒發民族藝術薪傳獎給資深的布袋戲藝師們，感謝與表彰他們對於布袋戲的貢獻。
+                    <br><br>儘管目前的布袋戲面臨種種挑戰，但對於深愛布袋戲的業界人士與戲迷們來說，他們仍舊以自身的力量努力傳承、紀錄並拓展創新，使臺灣的布袋戲能發展與突破，繼續陪伴人們走向下一哩路。
+                </p>
+            </div>
+        </div>
+        <div id="ending-a" class="container-fluid" style="padding-top: 80px;height : 300px"></div>
+        <div id="ending-b" class="container-fluid" style="padding-top: 80px;height : 300px"></div>
+        <div id="ending-c" class="container-fluid" style="padding-top: 80px;height : 1000px"></div>
+
+        <!-- Footer -->
+        <div style="height: 50vh; width: 100vw; background-color: rgb(145,73,64,0.9);">
+            <p id="footer">
+                採訪及製作團隊｜鄭喬羽、洪迎喬、蔡欣容<br>
+                文字｜鄭喬羽、洪迎喬<br>
+                網頁｜蔡欣容<br>
+                特別感謝｜<br>
+                陳錫煌傳統掌中劇團 陳錫煌、陳冠霖<br>
+                炎卿戲偶雕刻公司 徐俊文<br>
+                臺北偶戲館 蔡易衛、劉修岑<br>
+                新竹五洲真吉祥掌中劇團 楊志豪<br>
+                臺大布袋戲研習社學長 陳翰生 
+            </p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script>
+        // navigator滾動
+        let lastScrollTop = 0;
+        const delta = 5;
+        const navbarHeight = document.getElementById('navigator').offsetHeight;
+
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (Math.abs(lastScrollTop - currentScroll) <= delta)
+                return;
+
+            if (currentScroll > lastScrollTop && currentScroll > navbarHeight) {
+                // 向下滚动，隐藏导航栏
+                document.getElementById('navigator').style.top = `-${navbarHeight}px`;
+            } else {
+                // 向上滚动，显示导航栏
+                document.getElementById('navigator').style.top = "0";
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+
+
+        // 逐字
+        // 逐字显示h1文字
+        const textElement = document.getElementById('text');
+        const text = textElement.innerText;
+        textElement.innerText = ''; // 清空原本的文字
+        let index = 0;
+        function showText() {
+            textElement.innerText += text[index];
+            index++;
+            if (index < text.length) {
+                setTimeout(showText, 180);
+            }
+        }
+        // 逐字显示h3文字
+        const textElement2 = document.getElementById('text2');
+        const text2 = textElement2.innerText;
+        textElement2.innerText = ''; // 清空原本的文字
+        let index2 = 0;
+        // 等待h1文字逐字显示完毕后开始h3文字的逐字显示
+        setTimeout(() => {
+            function showText2() {
+                textElement2.innerText += text2[index2];
+                index2++;
+                if (index2 < text2.length) {
+                    setTimeout(showText2, 180);
+                }
+            }
+            showText2();
+        }, text.length * 200); // 延迟h3文字显示直到h1文字显示完毕
+        // 當頁面載入後觸發h1文字的逐字顯示
+        window.onload = function () {
+            showText();
+        };
+
+
+        // 開頭影片淡入 
+        window.addEventListener('DOMContentLoaded', function () {
+            var videoOverlay = document.querySelector('.video-overlay');
+
+            setTimeout(function() {
+                videoOverlay.style.opacity = '0';
+            }, 4000); // Wait for 4 seconds
+
+            var video = document.querySelector('video');
+            video.onloadeddata = function() {
+                setTimeout(function() {
+                    videoOverlay.style.opacity = '0';
+                }, 4000); // Wait for 4 seconds
+            };
+        });
+
+
+        // 對布袋戲的印象: scrolled image
+        $(window).scroll(function () {
+            var scrolled = $(document).scrollTop();
+            $(".loc").each(function () {
+                var thispos = $(this).offset().top;
+                var thish = $(this).height();
+                if (scrolled >= thispos && scrolled < thispos + thish) {
+                    var perc = (scrolled - thispos) / thish;
+                    var newx = perc * ($(this).data("ex") - $(this).data("sx")) + $(this).data("sx");
+                    var newy = perc * ($(this).data("ey") - $(this).data("sy")) + $(this).data("sy");
+                    $("#impression").css("background-position", newx + "% " + newy + "%");
+                }
+            });
+        });
+
+
+        // 對布袋戲的印象: 大家留言
+        const imageContainer = document.querySelector('.loc-image-container');
+        const images = imageContainer.querySelectorAll('.fade-in-image');
+        function fadeInImages(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let delay = 0;
+                    images.forEach((img) => {
+                        setTimeout(() => {
+                            img.style.opacity = '1';
+                        }, delay);
+                        delay += 950; // 设置每张图片的间隔时间（毫秒）
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+        const imageObserver = new IntersectionObserver(fadeInImages, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // 触发交叉观察器回调的阈值
+        });
+        imageObserver.observe(imageContainer);
+
+
+
+        // 音樂一播放
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-timeline');
+            const audioButton = document.getElementById('audioButton-trichord');
+
+            audioButton.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    audioButton.classList.remove('audio-pause');
+                    audioButton.classList.add('audio-play');
+                } else {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+        // 音樂一暫停（下滾）
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-timeline');
+            const audioButton = document.getElementById('audioButton-trichord');
+            const timelineContent = document.getElementById('timeline-content');
+
+        window.addEventListener('scroll', function () {
+            const rect = timelineContent.getBoundingClientRect();
+                if (rect.bottom <= window.innerHeight) {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+        // 音樂一暫停（上滾）
+        const audio = document.getElementById('audio-timeline');
+        const audioButton = document.getElementById('audioButton-trichord');
+
+        const options = {
+            threshold: 0.5 // 当目标元素50%可见时触发回调
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        }, options);
+
+        const target = document.querySelector('#audio1');
+        observer.observe(target);
+
+
+        // 時間軸動畫    
+        // 獲取所有的 timeline-text 元素
+        const textElements = document.querySelectorAll('.timeline-text');
+        // 找到第一個進入視窗的 span
+        let lastY=[0, 0, 0, 0, 0, 0];
+        let firstY=300;
+        textElements.forEach((text, index) => {
+            const rect = text.getBoundingClientRect();
+            lastY[index] = rect.top-firstY;
+        })
+        lastY[5]=lastY[4]+1155;
+        // 監聽滾動事件
+        window.addEventListener('scroll', () => {
+            textElements.forEach((text, index) => {
+                const rect = text.getBoundingClientRect();
+                if (window.scrollY>=lastY[index]&&window.scrollY<lastY[index+1]){
+                    text.style.transform = `translateY(${window.scrollY-lastY[index]}px)`;
+                }
+            });
+        });
+
+
+        // 音樂二播放
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-ending');
+            const audioButton = document.getElementById('audioButton-flute');
+
+            audioButton.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    audioButton.classList.remove('audio-pause');
+                    audioButton.classList.add('audio-play');
+                } else {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+        // 音樂二暫停（下滾）
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('audio-ending');
+            const audioButton = document.getElementById('audioButton-flute');
+            const interviewIntro = document.getElementById('ending-c');
+
+        window.addEventListener('scroll', function () {
+            const rect = interviewIntro.getBoundingClientRect();
+                if (rect.bottom <= window.innerHeight) {
+                    audio.pause();
+                    audioButton.classList.remove('audio-play');
+                    audioButton.classList.add('audio-pause');
+                }
+            });
+        });
+        // 音樂二暫停（上滾）
+        const audio2 = document.getElementById('audio-ending');
+        const audioButton2 = document.getElementById('audioButton-flute');
+
+        const options2 = {
+            threshold: 0.5 // 当目标元素50%可见时触发回调
+        };
+
+        const observer2 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    audio2.pause();
+                    audioButton2.classList.remove('audio-play');
+                    audioButton2.classList.add('audio-pause');
+                }
+            });
+        }, options2);
+
+        const target2 = document.querySelector('#audio2');
+        observer2.observe(target2);
+
+
+        // highlight
+        $(function () {
+	        var winh = $(window).height();
+	        $(window).scroll(function () {
+		        var current_pos = $(document).scrollTop();
+		        $(".highlight").each(function () {
+			        if (current_pos > $(this).offset().top - winh / 2) {
+				        $(this).addClass("highlighted");
+			        } 
+		        });
+	        });
+        });
+
+
+        // 浮現emerge
+        window.addEventListener('scroll', function () {
+            var emergeElements = document.querySelectorAll('.emerge');
+            emergeElements.forEach(function (emergeElement) {
+                var emergePosition = emergeElement.getBoundingClientRect().top;
+                var screenHeight = window.innerHeight;
+                if (emergePosition < screenHeight * 0.5) {
+                    emergeElement.style.opacity = '1';
+                }
+            });
+        });
+
+        </script>
+    </body>
+</html>
